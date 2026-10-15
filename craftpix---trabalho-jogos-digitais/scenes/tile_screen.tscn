@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://1i44qp67e060"]
+
+[ext_resource type="Script" uid="uid://xo410k3u383k" path="res://scripts/tile_screen.gd" id="1_wot35"]
+[ext_resource type="Texture2D" uid="uid://cnca23mfbn3fu" path="res://assets/backgrounds/Paisagem Pixel Art com Base Futurista.png" id="2_wot35"]
+[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/buttons/default_buttons.tres" id="3_ktlfr"]
+[ext_resource type="Texture2D" uid="uid://uo74aa8axqiv" path="res://assets/gui/logo/Logotipo Pixelado LUMA com Natureza.png" id="4_epmgm"]
+[ext_resource type="FontFile" uid="uid://djfpkip4ikml0" path="res://fonts/PixeloidSans-Bold.otf" id="4_wot35"]
+[ext_resource type="Texture2D" uid="uid://cxm742xujsl13" path="res://assets/characters/Idle.png" id="6_wot35"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epmgm"]
+atlas = ExtResource("6_wot35")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wjpm"]
+atlas = ExtResource("6_wot35")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dojio"]
+atlas = ExtResource("6_wot35")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83u00"]
+atlas = ExtResource("6_wot35")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54g4m"]
+atlas = ExtResource("6_wot35")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju6kt"]
+atlas = ExtResource("6_wot35")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8wdu"]
+atlas = ExtResource("6_wot35")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wd20"]
+atlas = ExtResource("6_wot35")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osm46"]
+atlas = ExtResource("6_wot35")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aoa0"]
+atlas = ExtResource("6_wot35")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ebxf"]
+atlas = ExtResource("6_wot35")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5pgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epmgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wjpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dojio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83u00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54g4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju6kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8wdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wd20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osm46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aoa0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ebxf")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="TileScreen" type="Control" unique_id=2042178767]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wot35")
+
+[node name="background" type="TextureRect" parent="." unique_id=1485213169]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 639.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("2_wot35")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1433717576]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2038567006]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1565201744]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 138.0
+offset_right = 593.0
+offset_bottom = 458.0
+size_flags_horizontal = 6
+theme_override_constants/separation = 8
+
+[node name="start_button" type="Button" parent="VBoxContainer" unique_id=520294352]
+custom_minimum_size = Vector2(250, 35)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+theme = ExtResource("3_ktlfr")
+theme_override_fonts/font = ExtResource("4_wot35")
+theme_override_font_sizes/font_size = 18
+text = "JOGAR"
+
+[node name="options_button" type="Button" parent="VBoxContainer" unique_id=1796503262]
+custom_minimum_size = Vector2(250, 35)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+theme = ExtResource("3_ktlfr")
+theme_override_fonts/font = ExtResource("4_wot35")
+theme_override_font_sizes/font_size = 18
+text = "OPÇÕES"
+
+[node name="credits_button" type="Button" parent="VBoxContainer" unique_id=339146330]
+custom_minimum_size = Vector2(270, 35)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+theme = ExtResource("3_ktlfr")
+theme_override_fonts/font = ExtResource("4_wot35")
+theme_override_font_sizes/font_size = 18
+text = "CRÉDITOS"
+
+[node name="exit_button" type="Button" parent="VBoxContainer" unique_id=1210956047]
+custom_minimum_size = Vector2(250, 35)
+custom_maximum_size = Vector2(250, -1)
+layout_mode = 2
+theme = ExtResource("3_ktlfr")
+theme_override_fonts/font = ExtResource("4_wot35")
+theme_override_font_sizes/font_size = 18
+text = "SAIR"
+
+[node name="game_logo" type="TextureRect" parent="." unique_id=1758492158]
+layout_mode = 0
+offset_left = 296.0
+offset_top = -282.0
+offset_right = 596.0
+offset_bottom = 453.0
+mouse_filter = 2
+texture = ExtResource("4_epmgm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="character_animated" type="AnimatedSprite2D" parent="." unique_id=1084166519]
+position = Vector2(171, 185)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_x5pgy")
+animation = &"idle"
+frame_progress = 0.74844724
+
+[connection signal="pressed" from="VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
