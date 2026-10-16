@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xo410k3u383k" path="res://scripts/tile_screen.gd" id="1_wot35"]
 [ext_resource type="Texture2D" uid="uid://cnca23mfbn3fu" path="res://assets/backgrounds/Paisagem Pixel Art com Base Futurista.png" id="2_wot35"]
-[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/buttons/default_buttons.tres" id="3_ktlfr"]
+[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/default_buttons.tres" id="3_ktlfr"]
 [ext_resource type="Texture2D" uid="uid://uo74aa8axqiv" path="res://assets/gui/logo/Logotipo Pixelado LUMA com Natureza.png" id="4_epmgm"]
 [ext_resource type="FontFile" uid="uid://djfpkip4ikml0" path="res://fonts/PixeloidSans-Bold.otf" id="4_wot35"]
 [ext_resource type="Texture2D" uid="uid://cxm742xujsl13" path="res://assets/characters/Idle.png" id="6_wot35"]
