@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://v36cuxxaxjlq"]
+
+[ext_resource type="Texture2D" uid="uid://dhsj2l347jifb" path="res://assets/traps/spikes.png" id="1_5pg7g"]
+[ext_resource type="Script" uid="uid://c3hpbsqofi4sh" path="res://scripts/spikes.gd" id="1_xbcdo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5pgy"]
+size = Vector2(64, 10)
+
+[node name="Spikes" type="Area2D" unique_id=24001118]
+script = ExtResource("1_xbcdo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=116698204]
+position = Vector2(-24, 0)
+texture = ExtResource("1_5pg7g")
+hframes = 7
+frame = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1816778616]
+position = Vector2(-8, 0)
+texture = ExtResource("1_5pg7g")
+hframes = 7
+frame = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1903587862]
+position = Vector2(8, 0)
+texture = ExtResource("1_5pg7g")
+hframes = 7
+frame = 2
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1118772443]
+position = Vector2(24, 0)
+texture = ExtResource("1_5pg7g")
+hframes = 7
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1139227068]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_x5pgy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
