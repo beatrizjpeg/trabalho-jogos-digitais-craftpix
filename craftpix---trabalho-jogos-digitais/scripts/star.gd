@@ -1,19 +1,21 @@
+
 extends Area2D
+
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var collected: bool = false
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _ready() -> void:
+	sprite.play("spin")
 
-	# Verifica se quem encostou foi a raposa
+
+func _on_body_entered(body: Node2D) -> void:
 	if body.name != "Player" or collected:
 		return
 
-	# Impede que a mesma estrela seja coletada duas vezes
 	collected = true
 
-	# Avisa o HUD que uma estrela foi coletada
 	get_tree().call_group("level_hud", "add_star")
 
-	# Remove a estrela do cenário
 	queue_free()

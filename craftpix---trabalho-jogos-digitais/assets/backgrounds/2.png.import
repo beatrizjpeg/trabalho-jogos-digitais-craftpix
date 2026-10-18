@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyq4ts12dr8hl"
-path="res://.godot/imported/Paisagem Pixel Art com Base Futurista.png-061acce6aa84fdb1c29e15a6e0571a0b.ctex"
+uid="uid://dyc4bxmvx25e2"
+path="res://.godot/imported/2.png-423ea5179d62396faa79144ddb66d942.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/Paisagem Pixel Art com Base Futurista.png"
-dest_files=["res://.godot/imported/Paisagem Pixel Art com Base Futurista.png-061acce6aa84fdb1c29e15a6e0571a0b.ctex"]
+source_file="res://assets/backgrounds/2.png"
+dest_files=["res://.godot/imported/2.png-423ea5179d62396faa79144ddb66d942.ctex"]
 
 [params]
 
