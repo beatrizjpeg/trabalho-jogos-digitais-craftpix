@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b8x2ga31a46g4" path="res://assets/gems/1.png" id="11_2aecg"]
 [ext_resource type="Script" uid="uid://b53gnf6x6iw5b" path="res://scripts/victory_panel.gd" id="18_isj1j"]
 [ext_resource type="Script" uid="uid://bgr6b6eor7fdx" path="res://scripts/camera_2d.gd" id="22_tr1x6"]
+[ext_resource type="Texture2D" uid="uid://xmunqhakxyt5" path="res://assets/backgrounds/5.png" id="23_d5akn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bswci"]
 texture = ExtResource("1_014kd")
@@ -494,7 +495,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hnsmf")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"spin",
 "speed": 8.0
 }]
@@ -531,7 +532,7 @@ position = Vector2(1056, 184)
 position = Vector2(256, 200)
 
 [node name="Star2" parent="Objects" unique_id=1164211294 instance=ExtResource("3_7gny6")]
-position = Vector2(392, 232)
+position = Vector2(440, 232)
 
 [node name="Star3" parent="Objects" unique_id=593769516 instance=ExtResource("3_7gny6")]
 position = Vector2(608, 168)
@@ -546,7 +547,7 @@ position = Vector2(1472, 168)
 position = Vector2(1608, 199)
 
 [node name="Checkpoint" parent="Objects" unique_id=170853498 instance=ExtResource("6_7nomh")]
-position = Vector2(432, 216)
+position = Vector2(768, 185)
 
 [node name="Checkpoint2" parent="Objects" unique_id=1067735537 instance=ExtResource("6_7nomh")]
 position = Vector2(1176, 184)
@@ -593,17 +594,17 @@ script = ExtResource("3_e3sih")
 [node name="Hearts" type="Node2D" parent="CanvasLayer" unique_id=1622403454]
 
 [node name="Heart1" type="AnimatedSprite2D" parent="CanvasLayer/Hearts" unique_id=1784702021]
-position = Vector2(88, 16)
+position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_x5pgy")
 animation = &"full"
 
 [node name="Heart2" type="AnimatedSprite2D" parent="CanvasLayer/Hearts" unique_id=2079485831]
-position = Vector2(112, 16)
+position = Vector2(40, 16)
 sprite_frames = SubResource("SpriteFrames_x5pgy")
 animation = &"full"
 
 [node name="Heart3" type="AnimatedSprite2D" parent="CanvasLayer/Hearts" unique_id=1656353908]
-position = Vector2(136, 16)
+position = Vector2(64, 16)
 sprite_frames = SubResource("SpriteFrames_x5pgy")
 animation = &"full"
 
@@ -662,16 +663,16 @@ text = "TENTAR NOVAMENTE"
 
 [node name="StarIcon" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=2127990593]
 texture_filter = 1
-position = Vector2(16, 16)
-scale = Vector2(2, 2)
+position = Vector2(624, 16)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_h62nm")
 animation = &"spin"
 frame_progress = 0.607575
 
 [node name="StarsLabel" type="Label" parent="CanvasLayer" unique_id=1095496076]
-offset_left = 32.0
+offset_left = 568.0
 offset_top = 8.0
-offset_right = 57.0
+offset_right = 605.0
 offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("8_2y5yt")
 text = "0/6"
@@ -757,6 +758,18 @@ limit_top = 0
 limit_right = 1792
 limit_bottom = 720
 script = ExtResource("22_tr1x6")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1552590584]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=348225925]
+texture_filter = 1
+texture_repeat = 2
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("23_d5akn")
+expand_mode = 1
+stretch_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/GameOverPanel/RetryButton" to="CanvasLayer" method="_on_retry_button_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Fallzone" method="_on_body_entered"]

@@ -67,11 +67,11 @@ radius = 7.0
 collision_layer = 0
 script = ExtResource("1_j6vao")
 
-[node name="Star" type="AnimatedSprite2D" parent="." unique_id=1208434045]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1208434045]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lh1ka")
 animation = &"spin"
-frame_progress = 0.86788875
+frame_progress = 0.77825826
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1308758672]
 shape = SubResource("CircleShape2D_mcqwg")

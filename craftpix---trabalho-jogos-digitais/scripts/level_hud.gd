@@ -37,8 +37,10 @@ func _ready() -> void:
 	# Esconder Game Over no início
 	game_over_panel.hide()
 
-	# Iniciar animação da estrela do HUD
-	star_icon.play("spin")
+	# Deixar a estrela do HUD parada
+	star_icon.animation = "spin"
+	star_icon.stop()
+	star_icon.frame = 0
 
 	# Encontrar o Player
 	var player: Node = get_parent().get_node("Player")
