@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cwesw4qpc5de3"]
+
+[ext_resource type="Script" uid="uid://djbgy2vmm6edn" path="res://scripts/moving_saw_horizontal.gd" id="1_8hqe1"]
+[ext_resource type="PackedScene" uid="uid://bruibrclqo8fx" path="res://scenes/saw.tscn" id="2_ugd4j"]
+
+[node name="MovingSawHorizon" type="Node2D" unique_id=808737189]
+script = ExtResource("1_8hqe1")
+
+[node name="Saw" parent="." unique_id=2092130034 instance=ExtResource("2_ugd4j")]
