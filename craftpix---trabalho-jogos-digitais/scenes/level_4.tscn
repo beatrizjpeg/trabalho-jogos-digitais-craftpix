@@ -450,7 +450,7 @@ speed = 60.0
 patrol_range = 50.0
 
 [node name="Robot2" parent="Objects" unique_id=1310076074 instance=ExtResource("7_hgnpj")]
-position = Vector2(2218, 139)
+position = Vector2(2218, 137)
 speed = 60.0
 patrol_range = 20.0
 
