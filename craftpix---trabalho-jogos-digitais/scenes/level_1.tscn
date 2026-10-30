@@ -6,21 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bk1s7y2m6ew8a" path="res://scenes/player.tscn" id="2_bswci"]
 [ext_resource type="Texture2D" uid="uid://cctbeg7yrobwy" path="res://assets/objetcts/2_Idle.png" id="3_6dial"]
 [ext_resource type="PackedScene" uid="uid://batngurp5w6gr" path="res://scenes/star.tscn" id="3_7gny6"]
-[ext_resource type="Texture2D" uid="uid://le5s5cka8uq1" path="res://assets/hud/heart/heart_empty.png" id="3_15mv3"]
-[ext_resource type="Script" uid="uid://2ubmekw8wheo" path="res://scripts/level_hud.gd" id="3_e3sih"]
 [ext_resource type="Script" uid="uid://gc0ceh0h487h" path="res://scripts/fallzone.gd" id="3_rus8k"]
-[ext_resource type="Texture2D" uid="uid://bi07d30fnx05k" path="res://assets/hud/heart/heart_full.png" id="4_e3sih"]
-[ext_resource type="Texture2D" uid="uid://c4us74bg83ky4" path="res://assets/hud/heart/heart_gain.png" id="5_2y5yt"]
-[ext_resource type="Texture2D" uid="uid://cyljkvsivdkqo" path="res://assets/hud/heart/heart_lose.png" id="6_2os1m"]
 [ext_resource type="PackedScene" uid="uid://d33jngp3p4i0w" path="res://scenes/checkpoint.tscn" id="6_7nomh"]
 [ext_resource type="PackedScene" uid="uid://de6h1623h4bsb" path="res://scenes/spring.tscn" id="7_1s4pk"]
-[ext_resource type="FontFile" uid="uid://djfpkip4ikml0" path="res://fonts/PixeloidSans-Bold.otf" id="8_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://cjj6jpn2kbmqj" path="res://scenes/break_platform.tscn" id="9_2cbcq"]
-[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/default_buttons.tres" id="9_2os1m"]
 [ext_resource type="PackedScene" uid="uid://bruibrclqo8fx" path="res://scenes/saw.tscn" id="9_isj1j"]
 [ext_resource type="PackedScene" uid="uid://clu3hxlqe6yjv" path="res://scenes/finish_flag.tscn" id="10_so66j"]
-[ext_resource type="Texture2D" uid="uid://b8x2ga31a46g4" path="res://assets/gems/1.png" id="11_2aecg"]
-[ext_resource type="Script" uid="uid://b53gnf6x6iw5b" path="res://scripts/victory_panel.gd" id="18_isj1j"]
+[ext_resource type="PackedScene" uid="uid://b65p47loh6ben" path="res://scenes/level_hud.tscn" id="11_6dial"]
 [ext_resource type="Script" uid="uid://bgr6b6eor7fdx" path="res://scripts/camera_2d.gd" id="22_tr1x6"]
 [ext_resource type="Texture2D" uid="uid://xmunqhakxyt5" path="res://assets/backgrounds/5.png" id="23_d5akn"]
 
@@ -321,188 +313,6 @@ sources/0 = SubResource("TileSetAtlasSource_bswci")
 sources/1 = SubResource("TileSetAtlasSource_6dial")
 sources/2 = SubResource("TileSetAtlasSource_7nomh")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_go7sj"]
-atlas = ExtResource("3_15mv3")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7gny6"]
-atlas = ExtResource("4_e3sih")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2aecg"]
-atlas = ExtResource("5_2y5yt")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6dial"]
-atlas = ExtResource("5_2y5yt")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7nomh"]
-atlas = ExtResource("5_2y5yt")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
-atlas = ExtResource("5_2y5yt")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2xxo"]
-atlas = ExtResource("5_2y5yt")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cbcq"]
-atlas = ExtResource("6_2os1m")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
-atlas = ExtResource("6_2os1m")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_so66j"]
-atlas = ExtResource("6_2os1m")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tr1x6"]
-atlas = ExtResource("6_2os1m")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d5akn"]
-atlas = ExtResource("6_2os1m")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbtxt"]
-atlas = ExtResource("6_2os1m")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_x5pgy"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_go7sj")
-}],
-"loop": 0,
-"name": &"empty",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7gny6")
-}],
-"loop": 0,
-"name": &"full",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2aecg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6dial")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7nomh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1s4pk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x2xxo")
-}],
-"loop": 0,
-"name": &"gain",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2cbcq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_isj1j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_so66j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tr1x6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d5akn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbtxt")
-}],
-"loop": 0,
-"name": &"lose",
-"speed": 12.0
-}]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5pgy"]
-bg_color = Color(0.14901961, 0.21176471, 0.2901961, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.9098039, 0.57254905, 0.25490198, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
-atlas = ExtResource("11_2aecg")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
-atlas = ExtResource("11_2aecg")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
-atlas = ExtResource("11_2aecg")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k8ld0"]
-atlas = ExtResource("11_2aecg")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mbb35"]
-atlas = ExtResource("11_2aecg")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iw4em"]
-atlas = ExtResource("11_2aecg")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hnsmf"]
-atlas = ExtResource("11_2aecg")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_h62nm"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x2fux")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s7g0b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmfjm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k8ld0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mbb35")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iw4em")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hnsmf")
-}],
-"loop": 0,
-"name": &"spin",
-"speed": 8.0
-}]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h62nm"]
-bg_color = Color(0.14901961, 0.21176471, 0.2901961, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5pgy"]
 size = Vector2(1792, 52)
 
@@ -588,157 +398,10 @@ position = Vector2(1472, 192)
 [node name="FinishFlag" parent="Objects" unique_id=2118181287 instance=ExtResource("10_so66j")]
 position = Vector2(1704, 185)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1688796988]
-script = ExtResource("3_e3sih")
+[node name="CanvasLayer" parent="." unique_id=1687931516 instance=ExtResource("11_6dial")]
 
-[node name="Hearts" type="Node2D" parent="CanvasLayer" unique_id=1622403454]
-
-[node name="Heart1" type="AnimatedSprite2D" parent="CanvasLayer/Hearts" unique_id=1784702021]
-position = Vector2(16, 16)
-sprite_frames = SubResource("SpriteFrames_x5pgy")
-animation = &"full"
-
-[node name="Heart2" type="AnimatedSprite2D" parent="CanvasLayer/Hearts" unique_id=2079485831]
-position = Vector2(40, 16)
-sprite_frames = SubResource("SpriteFrames_x5pgy")
-animation = &"full"
-
-[node name="Heart3" type="AnimatedSprite2D" parent="CanvasLayer/Hearts" unique_id=1656353908]
-position = Vector2(64, 16)
-sprite_frames = SubResource("SpriteFrames_x5pgy")
-animation = &"full"
-
-[node name="GameOverPanel" type="Panel" parent="CanvasLayer" unique_id=2067574495]
-visible = false
-custom_minimum_size = Vector2(360, 200)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -180.0
-offset_top = -100.0
-offset_right = 180.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x5pgy")
-
-[node name="GameOverText" type="Label" parent="CanvasLayer/GameOverPanel" unique_id=2100911209]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 48.0
-offset_right = 300.0
-offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("8_2y5yt")
-theme_override_font_sizes/font_size = 18
-text = "FUGA INTERROMPIDA"
-horizontal_alignment = 1
-
-[node name="Message" type="Label" parent="CanvasLayer/GameOverPanel" unique_id=248290060]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 87.0
-offset_right = 300.0
-offset_bottom = 118.0
-theme_override_fonts/font = ExtResource("8_2y5yt")
-theme_override_font_sizes/font_size = 11
-text = "O laboratório capturou Luma.
-"
-horizontal_alignment = 1
-
-[node name="RetryButton" type="Button" parent="CanvasLayer/GameOverPanel" unique_id=1373304296]
-custom_minimum_size = Vector2(250, 45)
-layout_mode = 0
-offset_left = 50.0
-offset_top = 129.0
-offset_right = 300.0
-offset_bottom = 174.0
-theme = ExtResource("9_2os1m")
-theme_override_font_sizes/font_size = 12
-text = "TENTAR NOVAMENTE"
-
-[node name="StarIcon" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=2127990593]
-texture_filter = 1
-position = Vector2(624, 16)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_h62nm")
-animation = &"spin"
-frame_progress = 0.607575
-
-[node name="StarsLabel" type="Label" parent="CanvasLayer" unique_id=1095496076]
-offset_left = 568.0
-offset_top = 8.0
-offset_right = 605.0
-offset_bottom = 31.0
-theme_override_fonts/font = ExtResource("8_2y5yt")
-text = "0/6"
-
-[node name="VictoryPanel" type="Panel" parent="CanvasLayer" unique_id=1229271420]
-visible = false
-offset_left = 112.0
-offset_top = 64.0
-offset_right = 532.0
-offset_bottom = 304.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_h62nm")
-script = ExtResource("18_isj1j")
-menu_scene_path = "uid://1i44qp67e060"
-next_level_path = "res://scenes/level_2.tscn"
-
-[node name="VictoryTitle" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=937928751]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 24.0
-offset_right = 398.0
-offset_bottom = 64.0
-theme_override_fonts/font = ExtResource("8_2y5yt")
-theme_override_font_sizes/font_size = 22
-text = "FASE CONCLUIDA!"
-horizontal_alignment = 1
-
-[node name="VictoryMessage" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=455620820]
-layout_mode = 0
-offset_left = 58.0
-offset_top = 64.0
-offset_right = 354.0
-offset_bottom = 87.0
-text = "Luma escapou do Setor de Contencao!"
-
-[node name="RetryButton" type="Button" parent="CanvasLayer/VictoryPanel" unique_id=155233528]
-custom_minimum_size = Vector2(60, 20)
-layout_mode = 0
-offset_left = 130.0
-offset_top = 96.0
-offset_right = 298.0
-offset_bottom = 127.0
-theme = ExtResource("9_2os1m")
-theme_override_font_sizes/font_size = 10
-text = "JOGAR NOVAMENTE"
-
-[node name="MenuButton" type="Button" parent="CanvasLayer/VictoryPanel" unique_id=91584037]
-custom_minimum_size = Vector2(60, 20)
-layout_mode = 0
-offset_left = 130.0
-offset_top = 136.0
-offset_right = 298.0
-offset_bottom = 167.0
-theme = ExtResource("9_2os1m")
-theme_override_font_sizes/font_size = 10
-text = "MENU PRINCIPAL"
-
-[node name="ContinueButton" type="Button" parent="CanvasLayer/VictoryPanel" unique_id=775414222]
-custom_minimum_size = Vector2(60, 20)
-layout_mode = 0
-offset_left = 130.0
-offset_top = 176.0
-offset_right = 298.0
-offset_bottom = 207.0
-theme = ExtResource("9_2os1m")
-theme_override_font_sizes/font_size = 10
-text = "CONTINUAR"
+[node name="VictoryPanel" parent="CanvasLayer" index="4" unique_id=161708975]
+next_level_path = "uid://cly7c037cbaep"
 
 [node name="Player" parent="." unique_id=211113343 instance=ExtResource("2_bswci")]
 position = Vector2(64, 240)
@@ -771,5 +434,6 @@ texture = ExtResource("23_d5akn")
 expand_mode = 1
 stretch_mode = 1
 
-[connection signal="pressed" from="CanvasLayer/GameOverPanel/RetryButton" to="CanvasLayer" method="_on_retry_button_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Fallzone" method="_on_body_entered"]
+
+[editable path="CanvasLayer"]
