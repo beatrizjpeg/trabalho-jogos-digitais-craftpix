@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bk1s7y2m6ew8a" path="res://scenes/player.tscn" id="21_vj84f"]
 [ext_resource type="Script" uid="uid://gc0ceh0h487h" path="res://scripts/fallzone.gd" id="22_6ue2a"]
 [ext_resource type="Script" uid="uid://bgr6b6eor7fdx" path="res://scripts/camera_2d.gd" id="23_d6hxp"]
-[ext_resource type="Texture2D" uid="uid://sqsahfs8tj3r" path="res://assets/backgrounds/3.png" id="24_66pcq"]
+[ext_resource type="Texture2D" uid="uid://b3otk0eqk313a" path="res://assets/backgrounds/3.png" id="24_66pcq"]
 [ext_resource type="PackedScene" uid="uid://4lwcaheeaeo3" path="res://scenes/spikes_small.tscn" id="25_ifqri"]
 [ext_resource type="PackedScene" uid="uid://cwesw4qpc5de3" path="res://scenes/moving_saw_horizontal.tscn" id="25_lp0k0"]
 [ext_resource type="PackedScene" uid="uid://dl82lneoo8633" path="res://scenes/tesla.tscn" id="28_11qgq"]
@@ -364,10 +364,12 @@ attack_distance = 50.0
 [node name="MovingSaw" parent="Objects" unique_id=808737189 instance=ExtResource("9_oiyts")]
 position = Vector2(677, 211)
 scale = Vector2(0.8, 0.8)
+travel_offset = Vector2(0, 160)
 
 [node name="MovingSaw2" parent="Objects" unique_id=1997517075 instance=ExtResource("9_oiyts")]
 position = Vector2(786, 212)
 scale = Vector2(0.8, 0.8)
+travel_offset = Vector2(0, 160)
 
 [node name="MovingSaw3" parent="Objects" unique_id=1434222253 instance=ExtResource("9_oiyts")]
 position = Vector2(1302, 48)
@@ -642,6 +644,7 @@ script = ExtResource("23_d6hxp")
 layer = -1
 
 [node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=1250714448]
+visible = false
 texture_filter = 1
 texture_repeat = 2
 offset_right = 1280.0
