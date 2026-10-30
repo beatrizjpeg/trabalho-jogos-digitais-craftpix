@@ -1,0 +1,360 @@
+[gd_scene format=3 uid="uid://b65p47loh6ben"]
+
+[ext_resource type="Script" uid="uid://2ubmekw8wheo" path="res://scripts/level_hud.gd" id="1_7fn38"]
+[ext_resource type="Texture2D" uid="uid://le5s5cka8uq1" path="res://assets/hud/heart/heart_empty.png" id="2_7hhej"]
+[ext_resource type="Texture2D" uid="uid://bi07d30fnx05k" path="res://assets/hud/heart/heart_full.png" id="3_85hq7"]
+[ext_resource type="Texture2D" uid="uid://c4us74bg83ky4" path="res://assets/hud/heart/heart_gain.png" id="4_c50s5"]
+[ext_resource type="Texture2D" uid="uid://cyljkvsivdkqo" path="res://assets/hud/heart/heart_lose.png" id="5_7lchl"]
+[ext_resource type="FontFile" uid="uid://djfpkip4ikml0" path="res://fonts/PixeloidSans-Bold.otf" id="6_h5muu"]
+[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/default_buttons.tres" id="7_0qcbi"]
+[ext_resource type="Texture2D" uid="uid://b8x2ga31a46g4" path="res://assets/gems/1.png" id="8_c350a"]
+[ext_resource type="Script" uid="uid://b53gnf6x6iw5b" path="res://scripts/victory_panel.gd" id="9_p8j1b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go7sj"]
+atlas = ExtResource("2_7hhej")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gny6"]
+atlas = ExtResource("3_85hq7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aecg"]
+atlas = ExtResource("4_c50s5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dial"]
+atlas = ExtResource("4_c50s5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nomh"]
+atlas = ExtResource("4_c50s5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s4pk"]
+atlas = ExtResource("4_c50s5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2xxo"]
+atlas = ExtResource("4_c50s5")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cbcq"]
+atlas = ExtResource("5_7lchl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isj1j"]
+atlas = ExtResource("5_7lchl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so66j"]
+atlas = ExtResource("5_7lchl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr1x6"]
+atlas = ExtResource("5_7lchl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5akn"]
+atlas = ExtResource("5_7lchl")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbtxt"]
+atlas = ExtResource("5_7lchl")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5pgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go7sj")
+}],
+"loop": 0,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gny6")
+}],
+"loop": 0,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aecg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dial")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nomh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s4pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2xxo")
+}],
+"loop": 0,
+"name": &"gain",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cbcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isj1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so66j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr1x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5akn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbtxt")
+}],
+"loop": 0,
+"name": &"lose",
+"speed": 12.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5pgy"]
+bg_color = Color(0.14901961, 0.21176471, 0.2901961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.9098039, 0.57254905, 0.25490198, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
+atlas = ExtResource("8_c350a")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
+atlas = ExtResource("8_c350a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
+atlas = ExtResource("8_c350a")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8ld0"]
+atlas = ExtResource("8_c350a")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbb35"]
+atlas = ExtResource("8_c350a")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw4em"]
+atlas = ExtResource("8_c350a")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnsmf"]
+atlas = ExtResource("8_c350a")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h62nm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2fux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7g0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmfjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8ld0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbb35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw4em")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnsmf")
+}],
+"loop": 1,
+"name": &"spin",
+"speed": 8.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h62nm"]
+bg_color = Color(0.14901961, 0.21176471, 0.2901961, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1687931516]
+script = ExtResource("1_7fn38")
+
+[node name="Hearts" type="Node2D" parent="." unique_id=209509747]
+
+[node name="Heart1" type="AnimatedSprite2D" parent="Hearts" unique_id=1410915023]
+position = Vector2(40, 16)
+sprite_frames = SubResource("SpriteFrames_x5pgy")
+animation = &"full"
+
+[node name="Heart2" type="AnimatedSprite2D" parent="Hearts" unique_id=795817988]
+position = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_x5pgy")
+animation = &"full"
+
+[node name="Heart3" type="AnimatedSprite2D" parent="Hearts" unique_id=848912694]
+position = Vector2(64, 16)
+sprite_frames = SubResource("SpriteFrames_x5pgy")
+animation = &"full"
+
+[node name="GameOverPanel" type="Panel" parent="." unique_id=349241762]
+visible = false
+custom_minimum_size = Vector2(360, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -100.0
+offset_right = 180.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x5pgy")
+
+[node name="GameOverText" type="Label" parent="GameOverPanel" unique_id=1247591853]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 38.0
+offset_right = 300.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("6_h5muu")
+theme_override_font_sizes/font_size = 18
+text = "FUGA INTERROMPIDA"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="GameOverPanel" unique_id=625460672]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 77.0
+offset_right = 300.0
+offset_bottom = 108.0
+theme_override_fonts/font = ExtResource("6_h5muu")
+theme_override_font_sizes/font_size = 11
+text = "O laboratório capturou Luma.
+"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="GameOverPanel" unique_id=942690231]
+custom_minimum_size = Vector2(250, 45)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 119.0
+offset_right = 300.0
+offset_bottom = 164.0
+theme = ExtResource("7_0qcbi")
+theme_override_font_sizes/font_size = 12
+text = "TENTAR NOVAMENTE"
+
+[node name="MenuButton" type="Button" parent="GameOverPanel" unique_id=3562306]
+custom_minimum_size = Vector2(250, 45)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 170.0
+offset_right = 300.0
+offset_bottom = 215.0
+theme = ExtResource("7_0qcbi")
+theme_override_font_sizes/font_size = 12
+text = "MENU PRINCIPAL"
+
+[node name="StarIcon" type="AnimatedSprite2D" parent="." unique_id=1091870856]
+texture_filter = 1
+position = Vector2(624, 16.000002)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_h62nm")
+animation = &"spin"
+frame_progress = 0.607575
+
+[node name="StarsLabel" type="Label" parent="." unique_id=474237249]
+offset_left = 576.0
+offset_top = 8.0
+offset_right = 613.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("6_h5muu")
+text = "0/6"
+
+[node name="VictoryPanel" type="Panel" parent="." unique_id=161708975]
+visible = false
+offset_left = 112.0
+offset_top = 64.0
+offset_right = 532.0
+offset_bottom = 304.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h62nm")
+script = ExtResource("9_p8j1b")
+menu_scene_path = "uid://1i44qp67e060"
+next_level_path = "uid://yw5c8wemu8s1"
+
+[node name="VictoryTitle" type="Label" parent="VictoryPanel" unique_id=1303611927]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 24.0
+offset_right = 398.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("6_h5muu")
+theme_override_font_sizes/font_size = 22
+text = "FASE CONCLUIDA!"
+horizontal_alignment = 1
+
+[node name="VictoryMessage" type="Label" parent="VictoryPanel" unique_id=1300953011]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 64.0
+offset_right = 354.0
+offset_bottom = 87.0
+text = "Luma atravessou o Nucleo E.D.E.N.!"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="VictoryPanel" unique_id=1015538824]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 96.0
+offset_right = 298.0
+offset_bottom = 127.0
+theme = ExtResource("7_0qcbi")
+theme_override_font_sizes/font_size = 10
+text = "JOGAR NOVAMENTE"
+
+[node name="MenuButton" type="Button" parent="VictoryPanel" unique_id=1423290823]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 136.0
+offset_right = 298.0
+offset_bottom = 167.0
+theme = ExtResource("7_0qcbi")
+theme_override_font_sizes/font_size = 10
+text = "MENU PRINCIPAL"
+
+[node name="ContinueButton" type="Button" parent="VictoryPanel" unique_id=627394463]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 176.0
+offset_right = 298.0
+offset_bottom = 207.0
+theme = ExtResource("7_0qcbi")
+theme_override_font_sizes/font_size = 10
+text = "CONTINUAR"
+
+[connection signal="pressed" from="GameOverPanel/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="GameOverPanel/MenuButton" to="." method="_on_menu_button_pressed"]
