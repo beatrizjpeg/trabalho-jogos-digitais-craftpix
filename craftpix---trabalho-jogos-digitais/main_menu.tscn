@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://dwmfyumuhnjni"]
+
+[ext_resource type="Texture2D" uid="uid://cn0goh75jvon" path="res://assets/backgrounds/1.png" id="1_jix8l"]
+[ext_resource type="FontFile" uid="uid://b6aiwbxiecqxv" path="res://fonts/PixelifySans-VariableFont_wght.ttf" id="2_glbon"]
+[ext_resource type="FontFile" uid="uid://dh8b6e73ip8bu" path="res://fonts/PressStart2P-Regular.ttf" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://cyglwx2lmawx6" path="res://assets/gui/buttons/Button_13.png" id="4_qe12f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3jci0"]
+font = ExtResource("3_nlkkf")
+font_size = 32
+font_color = Color(1, 1, 0.63529414, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7p1f8"]
+texture = ExtResource("4_qe12f")
+
+[node name="MainMenu" type="Control" unique_id=839696981]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=2128474710]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jix8l")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="." unique_id=1395133011]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -74.0
+offset_right = 78.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.9764706, 0.43137255, 1)
+theme_override_fonts/font = ExtResource("2_glbon")
+theme_override_font_sizes/font_size = 32
+text = "NOME"
+label_settings = SubResource("LabelSettings_3jci0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=1066117675]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -198.0
+offset_right = 42.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MenuButtons" unique_id=1745941997]
+custom_minimum_size = Vector2(260, 50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_7p1f8")
+text = "JOGAR
+"
+
+[node name="LevelsButton" type="Button" parent="MenuButtons" unique_id=1570220492]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+text = "FASES
+"
+
+[node name="OptionsButton" type="Button" parent="MenuButtons" unique_id=1481727471]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+text = "OPÇÕES"
+
+[node name="CreditsButton" type="Button" parent="MenuButtons" unique_id=1514926674]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+text = "CRÉDITOS"
+
+[node name="ExitButton" type="Button" parent="MenuButtons" unique_id=339765058]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+text = "SAIR"

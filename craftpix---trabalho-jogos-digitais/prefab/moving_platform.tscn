@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bg83cdasc4ckm"]
+
+[ext_resource type="Script" uid="uid://cyk6n4nn7qt15" path="res://scripts/moving_platform.gd" id="1_1tdcd"]
+[ext_resource type="TileSet" uid="uid://d2k0ugk0gjqcw" path="res://scenes/lab_tielset.tres" id="2_mb26n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lb3gk"]
+size = Vector2(48, 8)
+
+[node name="MovingPlatform" type="AnimatableBody2D" unique_id=1718962523]
+script = ExtResource("1_1tdcd")
+travel_offset = Vector2(0, 120)
+move_speed = 40.0
+
+[node name="VisualTiles" type="TileMapLayer" parent="." unique_id=1709732741]
+tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 14, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 9, 0, 0, 0, 255, 255, 0, 0, 0, 0, 12, 0, 9, 0, 0, 0)
+tile_set = ExtResource("2_mb26n")
+
+[node name="VisualTiles2" type="TileMapLayer" parent="." unique_id=717864184]
+tile_map_data = PackedByteArray(0, 0, 1, 0, 0, 0, 0, 0, 14, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 9, 0, 0, 0, 255, 255, 0, 0, 0, 0, 12, 0, 9, 0, 0, 0)
+tile_set = ExtResource("2_mb26n")
+collision_enabled = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=565715499]
+position = Vector2(8, 3)
+shape = SubResource("RectangleShape2D_lb3gk")
