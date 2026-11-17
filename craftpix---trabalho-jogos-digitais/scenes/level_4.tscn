@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bk1s7y2m6ew8a" path="res://scenes/player.tscn" id="21_vj84f"]
 [ext_resource type="Script" uid="uid://gc0ceh0h487h" path="res://scripts/fallzone.gd" id="22_6ue2a"]
 [ext_resource type="Script" uid="uid://bgr6b6eor7fdx" path="res://scripts/camera_2d.gd" id="23_d6hxp"]
+[ext_resource type="Texture2D" uid="uid://b3otk0eqk313a" path="res://assets/backgrounds/3.png" id="24_66pcq"]
 [ext_resource type="PackedScene" uid="uid://4lwcaheeaeo3" path="res://scenes/spikes_small.tscn" id="25_ifqri"]
 [ext_resource type="PackedScene" uid="uid://cwesw4qpc5de3" path="res://scenes/moving_saw_horizontal.tscn" id="25_lp0k0"]
 [ext_resource type="PackedScene" uid="uid://dl82lneoo8633" path="res://scenes/tesla.tscn" id="28_11qgq"]
@@ -622,7 +623,7 @@ theme_override_font_sizes/font_size = 10
 text = "CONTINUAR"
 
 [node name="Player" parent="." unique_id=211113343 instance=ExtResource("21_vj84f")]
-position = Vector2(2057, 144)
+position = Vector2(64, 147)
 
 [node name="Fallzone" type="Area2D" parent="." unique_id=189740793]
 position = Vector2(8, 0)
