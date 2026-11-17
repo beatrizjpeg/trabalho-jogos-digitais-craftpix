@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://bk1s7y2m6ew8a" path="res://scenes/player.tscn" id="21_vj84f"]
 [ext_resource type="Script" uid="uid://gc0ceh0h487h" path="res://scripts/fallzone.gd" id="22_6ue2a"]
 [ext_resource type="Script" uid="uid://bgr6b6eor7fdx" path="res://scripts/camera_2d.gd" id="23_d6hxp"]
-[ext_resource type="Texture2D" uid="uid://b3otk0eqk313a" path="res://assets/backgrounds/3.png" id="24_66pcq"]
 [ext_resource type="PackedScene" uid="uid://4lwcaheeaeo3" path="res://scenes/spikes_small.tscn" id="25_ifqri"]
 [ext_resource type="PackedScene" uid="uid://cwesw4qpc5de3" path="res://scenes/moving_saw_horizontal.tscn" id="25_lp0k0"]
 [ext_resource type="PackedScene" uid="uid://dl82lneoo8633" path="res://scenes/tesla.tscn" id="28_11qgq"]
@@ -566,7 +565,7 @@ offset_right = 532.0
 offset_bottom = 304.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_h62nm")
 script = ExtResource("20_oul2l")
-menu_scene_path = "uid://1i44qp67e060"
+menu_scene_path = "uid://bklpa3r6tss8v"
 next_level_path = "uid://yw5c8wemu8s1"
 
 [node name="VictoryTitle" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=937928751]

@@ -499,7 +499,7 @@ offset_right = 532.0
 offset_bottom = 304.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_h62nm")
 script = ExtResource("20_jskkq")
-menu_scene_path = "uid://1i44qp67e060"
+menu_scene_path = "uid://bklpa3r6tss8v"
 next_level_path = "uid://yw5c8wemu8s1"
 
 [node name="VictoryTitle" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=937928751]
@@ -545,7 +545,7 @@ theme_override_font_sizes/font_size = 10
 text = "MENU PRINCIPAL"
 
 [node name="Player" parent="." unique_id=211113343 instance=ExtResource("21_hf2rb")]
-position = Vector2(3166, 189)
+position = Vector2(69, 223)
 
 [node name="Fallzone" type="Area2D" parent="." unique_id=189740793]
 position = Vector2(8, 0)

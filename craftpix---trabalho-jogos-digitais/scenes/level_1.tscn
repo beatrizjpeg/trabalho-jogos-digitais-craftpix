@@ -685,8 +685,8 @@ offset_right = 532.0
 offset_bottom = 304.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_h62nm")
 script = ExtResource("18_isj1j")
-menu_scene_path = "uid://1i44qp67e060"
-next_level_path = "res://scenes/level_2.tscn"
+menu_scene_path = "uid://bklpa3r6tss8v"
+next_level_path = "uid://cly7c037cbaep"
 
 [node name="VictoryTitle" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=937928751]
 layout_mode = 0
