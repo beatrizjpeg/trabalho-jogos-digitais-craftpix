@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://de6h1623h4bsb" path="res://scenes/spring.tscn" id="7_1s4pk"]
 [ext_resource type="FontFile" uid="uid://djfpkip4ikml0" path="res://fonts/PixeloidSans-Bold.otf" id="8_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://cjj6jpn2kbmqj" path="res://scenes/break_platform.tscn" id="9_2cbcq"]
-[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/default_buttons.tres" id="9_2os1m"]
+[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/buttons/default_buttons.tres" id="9_2os1m"]
 [ext_resource type="PackedScene" uid="uid://bruibrclqo8fx" path="res://scenes/saw.tscn" id="9_isj1j"]
 [ext_resource type="PackedScene" uid="uid://clu3hxlqe6yjv" path="res://scenes/finish_flag.tscn" id="10_so66j"]
 [ext_resource type="Texture2D" uid="uid://b8x2ga31a46g4" path="res://assets/gems/1.png" id="11_2aecg"]

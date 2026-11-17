@@ -142,3 +142,6 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1517286550]
 shape = SubResource("RectangleShape2D_yyywg")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2116038524]
+position = Vector2(24, -32)
