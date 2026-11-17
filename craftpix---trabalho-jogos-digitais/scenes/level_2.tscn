@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c4us74bg83ky4" path="res://assets/hud/heart/heart_gain.png" id="14_vwjju"]
 [ext_resource type="Texture2D" uid="uid://cyljkvsivdkqo" path="res://assets/hud/heart/heart_lose.png" id="15_rur20"]
 [ext_resource type="FontFile" uid="uid://djfpkip4ikml0" path="res://fonts/PixeloidSans-Bold.otf" id="16_srjk8"]
-[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/default_buttons.tres" id="17_0na3t"]
+[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/buttons/default_buttons.tres" id="17_0na3t"]
 [ext_resource type="Texture2D" uid="uid://b8x2ga31a46g4" path="res://assets/gems/1.png" id="18_gxp3h"]
 [ext_resource type="Script" uid="uid://b53gnf6x6iw5b" path="res://scripts/victory_panel.gd" id="19_qku3a"]
 [ext_resource type="PackedScene" uid="uid://bk1s7y2m6ew8a" path="res://scenes/player.tscn" id="20_xc1pa"]
@@ -700,7 +700,7 @@ offset_right = 532.0
 offset_bottom = 304.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_h62nm")
 script = ExtResource("19_qku3a")
-menu_scene_path = "uid://1i44qp67e060"
+menu_scene_path = "uid://bklpa3r6tss8v"
 next_level_path = "res://scenes/level_3.tscn"
 
 [node name="VictoryTitle" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=937928751]

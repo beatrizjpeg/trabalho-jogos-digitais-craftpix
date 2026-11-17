@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c4us74bg83ky4" path="res://assets/hud/heart/heart_gain.png" id="14_ciptj"]
 [ext_resource type="Texture2D" uid="uid://cyljkvsivdkqo" path="res://assets/hud/heart/heart_lose.png" id="15_jnlnj"]
 [ext_resource type="FontFile" uid="uid://djfpkip4ikml0" path="res://fonts/PixeloidSans-Bold.otf" id="16_nhai6"]
-[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/default_buttons.tres" id="17_0vrl8"]
+[ext_resource type="Theme" uid="uid://53i02d3322y3" path="res://assets/gui/buttons/default_buttons.tres" id="17_0vrl8"]
 [ext_resource type="Texture2D" uid="uid://b8x2ga31a46g4" path="res://assets/gems/1.png" id="18_1ke33"]
 [ext_resource type="Script" uid="uid://b53gnf6x6iw5b" path="res://scripts/victory_panel.gd" id="19_mnu1b"]
 [ext_resource type="PackedScene" uid="uid://bk1s7y2m6ew8a" path="res://scenes/player.tscn" id="20_be7ao"]
@@ -387,12 +387,12 @@ script = ExtResource("11_365g5")
 [node name="Hearts" type="Node2D" parent="CanvasLayer" unique_id=1622403454]
 
 [node name="Heart1" type="AnimatedSprite2D" parent="CanvasLayer/Hearts" unique_id=1784702021]
-position = Vector2(40, 16)
+position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_x5pgy")
 animation = &"full"
 
 [node name="Heart2" type="AnimatedSprite2D" parent="CanvasLayer/Hearts" unique_id=2079485831]
-position = Vector2(16, 16)
+position = Vector2(40, 16)
 sprite_frames = SubResource("SpriteFrames_x5pgy")
 animation = &"full"
 
@@ -479,7 +479,7 @@ offset_bottom = 304.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_h62nm")
 script = ExtResource("19_mnu1b")
 menu_scene_path = "uid://1i44qp67e060"
-next_level_path = "res://scenes/level_3.tscn"
+next_level_path = "uid://yw5c8wemu8s1"
 
 [node name="VictoryTitle" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=937928751]
 layout_mode = 0
@@ -564,6 +564,7 @@ offset_bottom = 720.0
 texture = ExtResource("24_bk4f1")
 expand_mode = 1
 stretch_mode = 1
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="CanvasLayer/GameOverPanel/RetryButton" to="CanvasLayer" method="_on_retry_button_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Fallzone" method="_on_body_entered"]
