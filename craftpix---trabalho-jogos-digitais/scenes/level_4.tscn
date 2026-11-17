@@ -622,7 +622,7 @@ theme_override_font_sizes/font_size = 10
 text = "CONTINUAR"
 
 [node name="Player" parent="." unique_id=211113343 instance=ExtResource("21_vj84f")]
-position = Vector2(64, 147)
+position = Vector2(2057, 144)
 
 [node name="Fallzone" type="Area2D" parent="." unique_id=189740793]
 position = Vector2(8, 0)

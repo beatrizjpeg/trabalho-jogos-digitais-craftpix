@@ -544,19 +544,8 @@ theme = ExtResource("18_w2ohj")
 theme_override_font_sizes/font_size = 10
 text = "MENU PRINCIPAL"
 
-[node name="ContinueButton" type="Button" parent="CanvasLayer/VictoryPanel" unique_id=775414222]
-custom_minimum_size = Vector2(60, 20)
-layout_mode = 0
-offset_left = 130.0
-offset_top = 176.0
-offset_right = 298.0
-offset_bottom = 207.0
-theme = ExtResource("18_w2ohj")
-theme_override_font_sizes/font_size = 10
-text = "CONTINUAR"
-
 [node name="Player" parent="." unique_id=211113343 instance=ExtResource("21_hf2rb")]
-position = Vector2(86, 222)
+position = Vector2(3166, 189)
 
 [node name="Fallzone" type="Area2D" parent="." unique_id=189740793]
 position = Vector2(8, 0)

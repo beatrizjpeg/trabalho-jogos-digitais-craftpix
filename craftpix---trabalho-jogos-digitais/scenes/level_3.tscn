@@ -387,12 +387,12 @@ script = ExtResource("11_365g5")
 [node name="Hearts" type="Node2D" parent="CanvasLayer" unique_id=1622403454]
 
 [node name="Heart1" type="AnimatedSprite2D" parent="CanvasLayer/Hearts" unique_id=1784702021]
-position = Vector2(40, 16)
+position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_x5pgy")
 animation = &"full"
 
 [node name="Heart2" type="AnimatedSprite2D" parent="CanvasLayer/Hearts" unique_id=2079485831]
-position = Vector2(16, 16)
+position = Vector2(40, 16)
 sprite_frames = SubResource("SpriteFrames_x5pgy")
 animation = &"full"
 
@@ -564,6 +564,7 @@ offset_bottom = 720.0
 texture = ExtResource("24_bk4f1")
 expand_mode = 1
 stretch_mode = 1
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="CanvasLayer/GameOverPanel/RetryButton" to="CanvasLayer" method="_on_retry_button_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Fallzone" method="_on_body_entered"]

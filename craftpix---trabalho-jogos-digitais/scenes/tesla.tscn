@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dl82lneoo8633"]
+
+[ext_resource type="Texture2D" uid="uid://bdymyq7kny3px" path="res://assets/traps/6.png" id="1_288ts"]
+[ext_resource type="Script" uid="uid://pix74u5p3pnd" path="res://scripts/tesla.gd" id="2_wa54r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa54r"]
+atlas = ExtResource("1_288ts")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gythy"]
+atlas = ExtResource("1_288ts")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm2yj"]
+atlas = ExtResource("1_288ts")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3852j"]
+atlas = ExtResource("1_288ts")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqwxm"]
+atlas = ExtResource("1_288ts")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yqln"]
+atlas = ExtResource("1_288ts")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktehr"]
+atlas = ExtResource("1_288ts")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sbcm3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa54r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gythy")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm2yj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3852j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqwxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yqln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktehr")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_omuqt"]
+
+[node name="Tesla" type="Area2D" unique_id=1213121594]
+script = ExtResource("2_wa54r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1695473694]
+sprite_frames = SubResource("SpriteFrames_sbcm3")
+animation = &"off"
+autoplay = "off"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=738086490]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_omuqt")
