@@ -21,8 +21,21 @@
 [ext_resource type="PackedScene" uid="uid://clu3hxlqe6yjv" path="res://scenes/finish_flag.tscn" id="10_so66j"]
 [ext_resource type="Texture2D" uid="uid://b8x2ga31a46g4" path="res://assets/gems/1.png" id="11_2aecg"]
 [ext_resource type="Script" uid="uid://b53gnf6x6iw5b" path="res://scripts/victory_panel.gd" id="18_isj1j"]
+[ext_resource type="Script" uid="uid://dxagrg14ritle" path="res://scripts/game_over_dim.gd" id="18_q0ron"]
+[ext_resource type="Script" uid="uid://d21oaigshga4f" path="res://scripts/victory_dim.gd" id="19_tdlki"]
+[ext_resource type="Script" uid="uid://ri7aweitplq6" path="res://scripts/game_over_panel.gd" id="20_v8pws"]
+[ext_resource type="Texture2D" uid="uid://m7xpmrs3th6k" path="res://assets/gui/buttons/Button_15.png" id="22_rscm6"]
 [ext_resource type="Script" uid="uid://bgr6b6eor7fdx" path="res://scripts/camera_2d.gd" id="22_tr1x6"]
 [ext_resource type="Texture2D" uid="uid://xmunqhakxyt5" path="res://assets/backgrounds/5.png" id="23_d5akn"]
+[ext_resource type="Texture2D" uid="uid://cbclom8iibx3s" path="res://assets/gui/buttons/Button_16.png" id="23_wom8k"]
+[ext_resource type="Texture2D" uid="uid://c1v1snvjwqbgx" path="res://assets/gui/icons/Icon_14.png" id="24_wa552"]
+[ext_resource type="Texture2D" uid="uid://tqvqpgg4nksg" path="res://assets/gui/buttons/Button_01.png" id="25_v0i6o"]
+[ext_resource type="Texture2D" uid="uid://dgpqf28wuw2oe" path="res://assets/gui/buttons/Button_02.png" id="26_bamb7"]
+[ext_resource type="Texture2D" uid="uid://dqxcq3horjy7v" path="res://assets/gui/icons/Icon_20.png" id="27_8jqp6"]
+[ext_resource type="Script" uid="uid://dvqpjo1b0fws4" path="res://scripts/victory_stats.gd" id="29_jscgt"]
+[ext_resource type="Texture2D" uid="uid://borc8dcyf2vaj" path="res://assets/gui/buttons/Button_17.png" id="30_0bysi"]
+[ext_resource type="Texture2D" uid="uid://dmwvemyodkp7r" path="res://assets/gui/buttons/Button_18.png" id="31_y0ove"]
+[ext_resource type="Texture2D" uid="uid://b2jrkcc0tihg8" path="res://assets/gui/icons/Icon_24.png" id="32_awarj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bswci"]
 texture = ExtResource("1_014kd")
@@ -435,14 +448,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5pgy"]
-bg_color = Color(0.14901961, 0.21176471, 0.2901961, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.9098039, 0.57254905, 0.25490198, 1)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2fux"]
 atlas = ExtResource("11_2aecg")
 region = Rect2(0, 0, 16, 16)
@@ -500,8 +505,148 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h62nm"]
-bg_color = Color(0.14901961, 0.21176471, 0.2901961, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uuj1x"]
+bg_color = Color(0.14117648, 0.13333334, 0.2, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.54901963, 0.6, 0.6901961, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3x5jj"]
+texture = ExtResource("22_rscm6")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75ls7"]
+texture = ExtResource("23_wom8k")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gwsl1"]
+texture = ExtResource("23_wom8k")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lkded"]
+texture = ExtResource("25_v0i6o")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ensge"]
+texture = ExtResource("26_bamb7")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qb2q0"]
+texture = ExtResource("26_bamb7")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3eym"]
+bg_color = Color(0.14117648, 0.13333334, 0.2, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.54901963, 0.6, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffvxj"]
+bg_color = Color(0.1882353, 0.1764706, 0.25490198, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.33333334, 0.34117648, 0.42745098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yfehg"]
+texture = ExtResource("30_0bysi")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_48b18"]
+texture = ExtResource("31_y0ove")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_88rua"]
+texture = ExtResource("31_y0ove")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_djvkm"]
+load_path = "res://.godot/imported/Button_15.png-7682ecc0a58ce19930d209034232416b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ila6"]
+texture = SubResource("CompressedTexture2D_djvkm")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k58mw"]
+load_path = "res://.godot/imported/Button_16.png-ac8cee365e3f0fd3467e620a6249d7b6.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lvvyj"]
+texture = SubResource("CompressedTexture2D_k58mw")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iwav6"]
+load_path = "res://.godot/imported/Icon_14.png-8c5d49873324540e76bc90d6bcaea7fb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y24n2"]
+load_path = "res://.godot/imported/Button_01.png-7491158162a7f4c50d386eec90e9930d.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n50md"]
+texture = SubResource("CompressedTexture2D_y24n2")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8njs3"]
+load_path = "res://.godot/imported/Button_02.png-3761e9318987fd42b1ddc124d24655ca.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mteb0"]
+texture = SubResource("CompressedTexture2D_8njs3")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hw3il"]
+load_path = "res://.godot/imported/Button_02.png-3761e9318987fd42b1ddc124d24655ca.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dh7s"]
+texture = SubResource("CompressedTexture2D_hw3il")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ymcg8"]
+load_path = "res://.godot/imported/Icon_20.png-9e517cb6ee777d1b3f322818e8dede13.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5pgy"]
 size = Vector2(1792, 52)
@@ -608,59 +753,6 @@ position = Vector2(64, 16)
 sprite_frames = SubResource("SpriteFrames_x5pgy")
 animation = &"full"
 
-[node name="GameOverPanel" type="Panel" parent="CanvasLayer" unique_id=2067574495]
-visible = false
-custom_minimum_size = Vector2(360, 200)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -180.0
-offset_top = -100.0
-offset_right = 180.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x5pgy")
-
-[node name="GameOverText" type="Label" parent="CanvasLayer/GameOverPanel" unique_id=2100911209]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 48.0
-offset_right = 300.0
-offset_bottom = 70.0
-theme_override_fonts/font = ExtResource("8_2y5yt")
-theme_override_font_sizes/font_size = 18
-text = "FUGA INTERROMPIDA"
-horizontal_alignment = 1
-
-[node name="Message" type="Label" parent="CanvasLayer/GameOverPanel" unique_id=248290060]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 87.0
-offset_right = 300.0
-offset_bottom = 118.0
-theme_override_fonts/font = ExtResource("8_2y5yt")
-theme_override_font_sizes/font_size = 11
-text = "O laboratório capturou Luma.
-"
-horizontal_alignment = 1
-
-[node name="RetryButton" type="Button" parent="CanvasLayer/GameOverPanel" unique_id=1373304296]
-custom_minimum_size = Vector2(250, 45)
-layout_mode = 0
-offset_left = 50.0
-offset_top = 129.0
-offset_right = 300.0
-offset_bottom = 174.0
-theme = ExtResource("9_2os1m")
-theme_override_font_sizes/font_size = 12
-text = "TENTAR NOVAMENTE"
-
 [node name="StarIcon" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=2127990593]
 texture_filter = 1
 position = Vector2(624, 16)
@@ -677,68 +769,272 @@ offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("8_2y5yt")
 text = "0/6"
 
-[node name="VictoryPanel" type="Panel" parent="CanvasLayer" unique_id=1229271420]
+[node name="GameOverDim" type="ColorRect" parent="CanvasLayer" unique_id=1007381121]
 visible = false
-offset_left = 112.0
-offset_top = 64.0
-offset_right = 532.0
-offset_bottom = 304.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_h62nm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.03137255, 0.043137256, 0.09411765, 0.7019608)
+script = ExtResource("18_q0ron")
+
+[node name="VictoryDim" type="ColorRect" parent="CanvasLayer" unique_id=1707316517]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.03137255, 0.043137256, 0.09411765, 0.7019608)
+script = ExtResource("19_tdlki")
+
+[node name="GameOverPanel" type="Panel" parent="CanvasLayer" unique_id=789215951]
+visible = false
+custom_minimum_size = Vector2(360, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -110.0
+offset_right = 180.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uuj1x")
+script = ExtResource("20_v8pws")
+
+[node name="GameOverText" type="Label" parent="CanvasLayer/GameOverPanel" unique_id=1005942808]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 360.0
+offset_bottom = 60.0
+theme = ExtResource("9_2os1m")
+theme_override_colors/font_color = Color(0.94509804, 0.29803923, 0.35686275, 1)
+theme_override_fonts/font = ExtResource("8_2y5yt")
+theme_override_font_sizes/font_size = 18
+text = "CAPTURADA!"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="CanvasLayer/GameOverPanel" unique_id=1210959157]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 360.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 11
+text = "Luma foi recapturada antes mesmo de iniciar sua fuga.
+"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="CanvasLayer/GameOverPanel" unique_id=2029817804]
+custom_minimum_size = Vector2(220, 34)
+layout_mode = 0
+offset_left = 65.0
+offset_top = 122.0
+offset_right = 295.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("8_2y5yt")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_3x5jj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_75ls7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gwsl1")
+text = "TENTAR NOVAMENTE"
+icon = ExtResource("24_wa552")
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/GameOverPanel" unique_id=633538243]
+custom_minimum_size = Vector2(220, 34)
+layout_mode = 0
+offset_left = 65.0
+offset_top = 172.0
+offset_right = 295.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("8_2y5yt")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_lkded")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ensge")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qb2q0")
+text = "MENU PRINCIPAL"
+icon = ExtResource("27_8jqp6")
+
+[node name="VictoryPanel" type="Panel" parent="CanvasLayer" unique_id=433002538]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.0
+offset_top = -175.0
+offset_right = 205.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x3eym")
 script = ExtResource("18_isj1j")
 menu_scene_path = "uid://bklpa3r6tss8v"
 next_level_path = "uid://cly7c037cbaep"
 
-[node name="VictoryTitle" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=937928751]
+[node name="VictoryTitle" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=1164421200]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 24.0
-offset_right = 398.0
-offset_bottom = 64.0
+offset_top = 14.0
+offset_right = 440.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.972549, 0.77254903, 0.28235295, 1)
 theme_override_fonts/font = ExtResource("8_2y5yt")
-theme_override_font_sizes/font_size = 22
-text = "FASE CONCLUIDA!"
+theme_override_font_sizes/font_size = 24
+text = "FASE CONCLUÍDA!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VictoryMessage" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=2091021256]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 55.0
+offset_right = 420.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.94509804, 0.9254902, 0.9607843, 1)
+theme_override_font_sizes/font_size = 13
+text = "Luma escapou da primeira área de contenção. 
+A fuga começou!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsBackground" type="Panel" parent="CanvasLayer/VictoryPanel" unique_id=1685617361]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 96.0
+offset_right = 420.0
+offset_bottom = 172.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ffvxj")
+
+[node name="VictoryStats" type="HBoxContainer" parent="CanvasLayer/VictoryPanel" unique_id=196952864]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 101.0
+offset_right = 410.0
+offset_bottom = 171.0
+script = ExtResource("29_jscgt")
+
+[node name="LivesBlock" type="VBoxContainer" parent="CanvasLayer/VictoryPanel/VictoryStats" unique_id=550253958]
+custom_minimum_size = Vector2(180, 70)
+layout_mode = 2
+
+[node name="LivesLabel" type="Label" parent="CanvasLayer/VictoryPanel/VictoryStats/LivesBlock" unique_id=195718688]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.91764706, 0.9607843, 1)
+theme_override_font_sizes/font_size = 12
+text = "VIDAS GASTAS: 0/3"
 horizontal_alignment = 1
 
-[node name="VictoryMessage" type="Label" parent="CanvasLayer/VictoryPanel" unique_id=455620820]
-layout_mode = 0
-offset_left = 58.0
-offset_top = 64.0
-offset_right = 354.0
-offset_bottom = 87.0
-text = "Luma escapou do Setor de Contencao!"
+[node name="HeartsRow" type="HBoxContainer" parent="CanvasLayer/VictoryPanel/VictoryStats/LivesBlock" unique_id=1203767738]
+layout_mode = 2
+alignment = 1
 
-[node name="RetryButton" type="Button" parent="CanvasLayer/VictoryPanel" unique_id=155233528]
+[node name="Heart1" type="TextureRect" parent="CanvasLayer/VictoryPanel/VictoryStats/LivesBlock/HeartsRow" unique_id=1097490912]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/VictoryPanel/VictoryStats/LivesBlock/HeartsRow" unique_id=1978391029]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/VictoryPanel/VictoryStats/LivesBlock/HeartsRow" unique_id=1676246414]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StarsBlock" type="VBoxContainer" parent="CanvasLayer/VictoryPanel/VictoryStats" unique_id=608193481]
+custom_minimum_size = Vector2(180, 70)
+layout_mode = 2
+
+[node name="StarsTitle" type="Label" parent="CanvasLayer/VictoryPanel/VictoryStats/StarsBlock" unique_id=231638215]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.91764706, 0.9607843, 1)
+theme_override_font_sizes/font_size = 12
+text = "ESTRELAS COLETADAS"
+horizontal_alignment = 1
+
+[node name="StarsRow" type="HBoxContainer" parent="CanvasLayer/VictoryPanel/VictoryStats/StarsBlock" unique_id=1727746193]
+layout_mode = 2
+alignment = 1
+
+[node name="StarIcon" type="TextureRect" parent="CanvasLayer/VictoryPanel/VictoryStats/StarsBlock/StarsRow" unique_id=1353683102]
+texture_filter = 1
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StarsCount" type="Label" parent="CanvasLayer/VictoryPanel/VictoryStats/StarsBlock/StarsRow" unique_id=1842405481]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0/6"
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/VictoryPanel" unique_id=739991910]
 custom_minimum_size = Vector2(60, 20)
 layout_mode = 0
-offset_left = 130.0
-offset_top = 96.0
-offset_right = 298.0
-offset_bottom = 127.0
+offset_left = 85.0
+offset_top = 181.0
+offset_right = 355.0
+offset_bottom = 215.0
 theme = ExtResource("9_2os1m")
-theme_override_font_sizes/font_size = 10
-text = "JOGAR NOVAMENTE"
-
-[node name="MenuButton" type="Button" parent="CanvasLayer/VictoryPanel" unique_id=91584037]
-custom_minimum_size = Vector2(60, 20)
-layout_mode = 0
-offset_left = 130.0
-offset_top = 136.0
-offset_right = 298.0
-offset_bottom = 167.0
-theme = ExtResource("9_2os1m")
-theme_override_font_sizes/font_size = 10
-text = "MENU PRINCIPAL"
-
-[node name="ContinueButton" type="Button" parent="CanvasLayer/VictoryPanel" unique_id=775414222]
-custom_minimum_size = Vector2(60, 20)
-layout_mode = 0
-offset_left = 130.0
-offset_top = 176.0
-offset_right = 298.0
-offset_bottom = 207.0
-theme = ExtResource("9_2os1m")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_yfehg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_48b18")
+theme_override_styles/hover = SubResource("StyleBoxTexture_88rua")
 text = "CONTINUAR"
+icon = ExtResource("32_awarj")
+
+[node name="RetryButton" type="Button" parent="CanvasLayer/VictoryPanel" unique_id=1142451538]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 0
+offset_left = 85.0
+offset_top = 225.0
+offset_right = 355.0
+offset_bottom = 259.0
+theme = ExtResource("9_2os1m")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_4ila6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_48b18")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lvvyj")
+text = "JOGAR NOVAMENTE"
+icon = SubResource("CompressedTexture2D_iwav6")
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/VictoryPanel" unique_id=1899989420]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 0
+offset_left = 85.0
+offset_top = 269.0
+offset_right = 355.0
+offset_bottom = 303.0
+theme = ExtResource("9_2os1m")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_n50md")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mteb0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7dh7s")
+text = "MENU PRINCIPAL"
+icon = SubResource("CompressedTexture2D_ymcg8")
 
 [node name="Player" parent="." unique_id=211113343 instance=ExtResource("2_bswci")]
 position = Vector2(64, 240)
@@ -771,5 +1067,4 @@ texture = ExtResource("23_d5akn")
 expand_mode = 1
 stretch_mode = 1
 
-[connection signal="pressed" from="CanvasLayer/GameOverPanel/RetryButton" to="CanvasLayer" method="_on_retry_button_pressed"]
 [connection signal="body_entered" from="Fallzone" to="Fallzone" method="_on_body_entered"]
