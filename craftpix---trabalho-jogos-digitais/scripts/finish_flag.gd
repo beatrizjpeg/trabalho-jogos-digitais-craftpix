@@ -9,13 +9,13 @@ var completed: bool = false
 func _ready() -> void:
 	# Começa com a bandeira escondida
 	sprite.play("inactive")
-
+	
 	# Detecta quando Luma chega
 	body_entered.connect(_on_body_entered)
 
 
 func _on_body_entered(body: Node2D) -> void:
-
+	
 	# Verifica se é a raposa e se a fase já terminou
 	if completed:
 		return

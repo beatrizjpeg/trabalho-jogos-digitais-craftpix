@@ -15,6 +15,11 @@ run/main_scene="uid://bklpa3r6tss8v"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioManager="*uid://dnec3wwre7t4e"
+PauseMenu="*uid://7xbn0rrjwt4w"
+
 [display]
 
 window/size/viewport_width=640

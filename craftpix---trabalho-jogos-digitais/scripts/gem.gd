@@ -1,4 +1,3 @@
-
 extends Area2D
 
 signal collected
@@ -15,5 +14,6 @@ func _ready():
 
 func _on_body_entered(body):
 	if body is CharacterBody2D:
+		AudioManager.play_sfx("gem")
 		collected.emit()
 		queue_free()

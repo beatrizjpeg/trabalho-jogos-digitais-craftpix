@@ -17,6 +17,8 @@ func _ready() -> void:
 
 func _on_retry_pressed() -> void:
 	print("Reiniciando fase...")
+	AudioManager.play_sfx("click")
+	await get_tree().create_timer(0.1).timeout
 	get_tree().reload_current_scene()
 
 
@@ -24,7 +26,8 @@ func _on_menu_pressed() -> void:
 	print("Voltando ao menu principal...")
 
 	var menu_path: String = "res://scenes/main_menu.tscn"
-
+	AudioManager.play_sfx("click")
+	await get_tree().create_timer(0.1).timeout
 	if ResourceLoader.exists(menu_path):
 		get_tree().change_scene_to_file(menu_path)
 	else:

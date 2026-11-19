@@ -1,4 +1,3 @@
-
 extends Panel
 
 # CAMINHOS DAS CENAS
@@ -49,6 +48,10 @@ func _get_next_level_path() -> String:
 
 
 func show_victory() -> void:
+	if visible:
+		return
+
+	AudioManager.play_sfx("checkpoint")
 	show()
 
 	# Atualiza o botao Continuar se existir
@@ -58,10 +61,15 @@ func show_victory() -> void:
 
 
 func _on_retry_pressed() -> void:
+	AudioManager.play_sfx("click")
+	await get_tree().create_timer(0.1).timeout
 	get_tree().reload_current_scene()
 
 
 func _on_menu_pressed() -> void:
+	AudioManager.play_sfx("click")
+	await get_tree().create_timer(0.1).timeout
+
 	if ResourceLoader.exists(menu_scene_path):
 		get_tree().change_scene_to_file(menu_scene_path)
 	else:
@@ -69,6 +77,9 @@ func _on_menu_pressed() -> void:
 
 
 func _on_continue_pressed() -> void:
+	AudioManager.play_sfx("click")
+	await get_tree().create_timer(0.1).timeout
+
 	var path: String = _get_next_level_path()
 
 	if path.is_empty():

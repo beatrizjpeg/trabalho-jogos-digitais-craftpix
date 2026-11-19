@@ -1,4 +1,3 @@
-
 extends Area2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -15,6 +14,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	collected = true
+	AudioManager.play_sfx("gem")
 
 	get_tree().call_group("level_hud", "add_star")
 

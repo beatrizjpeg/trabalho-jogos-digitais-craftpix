@@ -1,0 +1,86 @@
+[gd_resource type="Theme" format=3 uid="uid://c2d5sqo5uf75f"]
+
+[ext_resource type="FontFile" uid="uid://djfpkip4ikml0" path="res://fonts/PixeloidSans-Bold.otf" id="1_2aant"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0.141176, 0.133333, 0.203922, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clean"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.298039, 0.788235, 0.941176, 1)
+border_width_bottom = 4
+border_color = Color(0.0980392, 0.392157, 0.839216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_normal"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.176471, 0.721569, 0.901961, 1)
+border_width_bottom = 4
+border_color = Color(0.0980392, 0.392157, 0.839216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_pressed"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+bg_color = Color(0.12549, 0.580392, 0.74902, 1)
+border_width_bottom = 2
+border_color = Color(0.0980392, 0.392157, 0.839216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="SystemFont" id="SystemFont_2aant"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_window"]
+bg_color = Color(0.141176, 0.133333, 0.203922, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.509804, 0.529412, 0.65098, 1)
+expand_margin_left = 4.0
+expand_margin_top = 36.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[resource]
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_panel")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_2aant")
+Button/styles/focus = SubResource("StyleBoxEmpty_clean")
+Button/styles/hover = SubResource("StyleBoxFlat_btn_hover")
+Button/styles/normal = SubResource("StyleBoxFlat_btn_normal")
+Button/styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+CheckButton/fonts/font = SubResource("SystemFont_2aant")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_clean")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_clean")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxEmpty_clean")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_clean")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_clean")
+Window/colors/title_color = Color(0.968627, 0.792157, 0.266667, 1)
+Window/fonts/title_font = ExtResource("1_2aant")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_window")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxFlat_window")

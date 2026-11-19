@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ke7yldo8tnsn" path="res://assets/gui/buttons/Button_05.png" id="4_8ln24"]
 [ext_resource type="Shader" uid="uid://lgk7vi35kywd" path="res://scenes/main_menu.gdshader" id="4_oa1go"]
 [ext_resource type="Texture2D" uid="uid://b2lth0w1qegdc" path="res://assets/gui/buttons/Button_06.png" id="5_rtw2f"]
+[ext_resource type="Theme" uid="uid://c2d5sqo5uf75f" path="res://dialog_theme.tres" id="8_tbmy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x5pgy"]
 shader = ExtResource("4_oa1go")
@@ -169,9 +170,55 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_h62nm")
 text = "SAIR"
 
 [node name="OpcoesDialog" type="AcceptDialog" parent="UILayer/MenuUI" unique_id=1545661093]
-dialog_text = "As opções do jogo serão adicionadas em breve."
+title = "Opções"
+size = Vector2i(300, 217)
+theme = ExtResource("8_tbmy8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/MenuUI/OpcoesDialog" unique_id=670654553]
+offset_left = 195.0
+offset_top = 167.0
+offset_right = 445.0
+offset_bottom = 287.0
+
+[node name="Label" type="Label" parent="UILayer/MenuUI/OpcoesDialog/VBoxContainer" unique_id=1343430226]
+layout_mode = 2
+text = "Volume da Música"
+
+[node name="MusicSlider" type="HSlider" parent="UILayer/MenuUI/OpcoesDialog/VBoxContainer" unique_id=2067094032]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Label2" type="Label" parent="UILayer/MenuUI/OpcoesDialog/VBoxContainer" unique_id=83318218]
+layout_mode = 2
+text = "Volume dos Efeitos"
+
+[node name="SfxSlider" type="HSlider" parent="UILayer/MenuUI/OpcoesDialog/VBoxContainer" unique_id=1695896833]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="PauseMusicCheck" type="CheckButton" parent="UILayer/MenuUI/OpcoesDialog/VBoxContainer" unique_id=1549194117]
+layout_mode = 2
+text = "Pausar Música"
+
+[node name="MuteAllCheck" type="CheckButton" parent="UILayer/MenuUI/OpcoesDialog/VBoxContainer" unique_id=1685769132]
+layout_mode = 2
+text = "Mutar Tudo"
 
 [node name="CreditosDialog" type="AcceptDialog" parent="UILayer/MenuUI" unique_id=659175344]
-dialog_text = "LUMA _ Trabalho de Jogos Digitais. Recursos gráficos: Craftpix."
+title = "Créditos"
+size = Vector2i(320, 250)
+theme = ExtResource("8_tbmy8")
+dialog_text = "Desenvolvimento:
+Beatriz, Karolliny e Vitor Leite
+
+Artes: CraftPix (Pixel Art Kits)
+Músicas: Pixabay
+Efeitos Sonoros: Bfxr 
+Engine: Godot Engine 4"
+dialog_autowrap = true
 
 [editable path="BackgroundViewport/SubViewport/Level05"]

@@ -1,4 +1,3 @@
-
 extends CanvasLayer
 
 # CORAÇÕES ANIMADOS
@@ -104,4 +103,6 @@ func _on_game_over() -> void:
 
 # BOTÃO TENTAR NOVAMENTE
 func _on_retry_button_pressed() -> void:
+	AudioManager.play_sfx("click")
+	await get_tree().create_timer(0.1).timeout
 	get_tree().reload_current_scene()

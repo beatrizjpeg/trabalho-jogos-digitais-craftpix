@@ -42,9 +42,11 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			velocity.y = jump_force
 			jumps_done = 1
+			AudioManager.play_sfx("jump")
 		elif jumps_done < max_jumps:
 			velocity.y = jump_force
 			jumps_done += 1
+			AudioManager.play_sfx("jump")
 
 	# Movimento horizontal
 	var direction: float = Input.get_axis("ui_left", "ui_right")
@@ -78,6 +80,7 @@ func respawn() -> void:
 	if respawn_locked or lives <= 0:
 		return
 
+	AudioManager.play_sfx("hit")
 	respawn_locked = true
 	lives -= 1
 
@@ -103,9 +106,12 @@ func respawn() -> void:
 
 # Define um novo ponto de retorno
 func set_checkpoint(new_position: Vector2) -> void:
-	initial_position = new_position
+	if initial_position != new_position:
+		initial_position = new_position
+		AudioManager.play_sfx("checkpoint")
 
 
 # Impulso causado pela mola
 func launch_up(force: float) -> void:
 	velocity.y = force
+	AudioManager.play_sfx("powerup")
