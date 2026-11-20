@@ -210,15 +210,34 @@ text = "Mutar Tudo"
 
 [node name="CreditosDialog" type="AcceptDialog" parent="UILayer/MenuUI" unique_id=659175344]
 title = "Créditos"
-size = Vector2i(320, 250)
+size = Vector2i(380, 240)
 theme = ExtResource("8_tbmy8")
-dialog_text = "Desenvolvimento:
+dialog_autowrap = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UILayer/MenuUI/CreditosDialog" unique_id=886351415]
+custom_minimum_size = Vector2(340, 140)
+offset_right = 40.0
+offset_bottom = 40.0
+horizontal_scroll_mode = 0
+
+[node name="Label" type="Label" parent="UILayer/MenuUI/CreditosDialog/ScrollContainer" unique_id=732920820]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "Desenvolvimento:
 Beatriz, Karolliny e Vitor Leite
 
-Artes: CraftPix (Pixel Art Kits)
-Músicas: Pixabay
-Efeitos Sonoros: Bfxr 
-Engine: Godot Engine 4"
-dialog_autowrap = true
+Artes: CraftPix (Free Simple Platformer Kit)
+Fontes: Pixeloid Sans (GGBotNet) e Press Start 2P
+Efeitos Sonoros: Bfxr
+Engine: Godot Engine 4 (MIT)
+
+Músicas:
+• Ominous Sci-Fi Menu — Eric Matyas (CC BY 3.0)
+• BlueBeat 01 — ERH (CC BY 3.0)
+• Rising Tension — Marcelo Fernández (CC BY 4.0)
+• Boss Battle — Alex McCulloch (CC0)"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [editable path="BackgroundViewport/SubViewport/Level05"]

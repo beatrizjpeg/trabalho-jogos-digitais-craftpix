@@ -20,10 +20,11 @@ var sfx_volumes = {
 }
 
 var music_streams = {
-	"menu": preload("res://assets/audio/music_menu.mp3"),
-	"level1": preload("res://assets/audio/music_level1.mp3"),
-	"level3": preload("res://assets/audio/music_level3.mp3"),
-	"level5": preload("res://assets/audio/music_level5.mp3")
+	"menu": preload("res://assets/audio/music_menu.ogg"),
+	"level1": preload("res://assets/audio/music_level1.ogg"),
+	"level3": preload("res://assets/audio/music_level3.wav"),
+	"level5": preload("res://assets/audio/music_level3.wav"),
+	"boss": preload("res://assets/audio/music_boss.mp3")
 }
 
 var music_player: AudioStreamPlayer
@@ -55,7 +56,7 @@ func play_sfx(sound_name: String, pitch: float = 1.0) -> void:
 	player.volume_db = base_db + linear_to_db(sfx_volume)
 
 	# Variação leve automática para não cansar o ouvido
-	if pitch == 1.0 and (sound_name == "jump" or sound_name == "gem"):
+	if pitch == 1.0 and sound_name == "jump":
 		player.pitch_scale = randf_range(0.92, 1.08)
 	else:
 		player.pitch_scale = pitch
@@ -74,7 +75,7 @@ func play_music(music_name: String, volume_db: float = -12.0) -> void:
 	current_music = music_name
 	base_music_db = volume_db
 	var stream = music_streams[music_name]
-	if stream is AudioStreamMP3:
+	if stream is AudioStreamMP3 or stream is AudioStreamOggVorbis:
 		stream.loop = true
 
 	music_player.stream = stream

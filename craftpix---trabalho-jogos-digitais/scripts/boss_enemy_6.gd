@@ -1,6 +1,8 @@
 
 extends Area2D
 
+@export var bandeira_final: Area2D
+
 # CONFIGURACOES DO BOSS
 @export var max_health: int = 3
 @export var move_speed: float = 45.0
@@ -51,6 +53,10 @@ var attack_hit: bool = false
 
 
 func _ready() -> void:
+	if bandeira_final:
+		bandeira_final.visible = false
+		bandeira_final.monitoring = false
+
 	health = max_health
 	initial_x = global_position.x
 
@@ -62,7 +68,6 @@ func _ready() -> void:
 
 	_set_facing_right(false)
 	sprite.play("idle")
-
 
 func _physics_process(delta: float) -> void:
 	if state == State.DEAD:
@@ -322,4 +327,7 @@ func _defeat_boss(hero: CharacterBody2D) -> void:
 			"show_victory"
 		)
 	else:
+		if bandeira_final:
+			bandeira_final.visible = true
+			bandeira_final.set_deferred("monitoring", true)
 		queue_free()
