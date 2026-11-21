@@ -702,7 +702,6 @@ text = "CAPTURADA!"
 horizontal_alignment = 1
 
 [node name="Message" type="Label" parent="CanvasLayer/GameOverPanel" unique_id=110090271]
-visible = false
 layout_mode = 0
 offset_top = 72.0
 offset_right = 360.0
