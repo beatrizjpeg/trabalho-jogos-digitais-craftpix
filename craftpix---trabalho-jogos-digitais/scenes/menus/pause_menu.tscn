@@ -45,6 +45,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5882353)
+metadata/_edit_lock_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=1501589509]
 layout_mode = 1
@@ -53,10 +54,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer" unique_id=26615701]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tbmy8")
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/PanelContainer" unique_id=1723528677]
 layout_mode = 2
@@ -64,10 +67,12 @@ theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer" unique_id=1324535135]
 layout_mode = 2
 theme_override_constants/separation = 12
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1951653091]
 layout_mode = 2
@@ -80,6 +85,9 @@ horizontal_alignment = 1
 [node name="ResumeButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=445168897]
 custom_minimum_size = Vector2(250, 32)
 layout_mode = 2
+focus_neighbor_top = NodePath("../MenuButton")
+focus_next = NodePath("../RetryButton")
+focus_previous = NodePath("../MenuButton")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5d2l8")
 theme_override_font_sizes/font_size = 20
@@ -87,6 +95,17 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_1s2dm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_88e76")
 theme_override_styles/hover = SubResource("StyleBoxTexture_knqa7")
 text = "Continuar"
+
+[node name="RetryButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1481129071]
+custom_minimum_size = Vector2(250, 32)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5d2l8")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_1s2dm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_88e76")
+theme_override_styles/hover = SubResource("StyleBoxTexture_knqa7")
+text = "Reiniciar"
 
 [node name="OptionsButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=312832623]
 custom_minimum_size = Vector2(250, 32)
@@ -102,6 +121,9 @@ text = "Opções"
 [node name="MenuButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1544073559]
 custom_minimum_size = Vector2(250, 32)
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../ResumeButton")
+focus_next = NodePath("../ResumeButton")
+focus_previous = NodePath("../OptionsButton")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5d2l8")
 theme_override_font_sizes/font_size = 20

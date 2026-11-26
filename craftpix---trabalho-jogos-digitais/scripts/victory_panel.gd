@@ -1,7 +1,7 @@
 extends Panel
 
 # CAMINHOS DAS CENAS
-@export_file("*.tscn") var menu_scene_path: String = "res://scenes/main_menu.tscn"
+@export_file("*.tscn") var menu_scene_path: String = "res://scenes/menus/main_menu.tscn"
 @export_file("*.tscn") var next_level_path: String = ""
 
 # BOTOES
@@ -14,7 +14,9 @@ extends Panel
 
 func _ready() -> void:
 	add_to_group("finish_ui")
-
+	
+	_setup_buttons_focus()
+	
 	# Esconde o painel ao iniciar
 	hide()
 
@@ -33,6 +35,26 @@ func _ready() -> void:
 
 		var path: String = _get_next_level_path()
 		continue_button.disabled = path.is_empty()
+	
+	if not visibility_changed.is_connected(_on_visibility_changed):
+		visibility_changed.connect(_on_visibility_changed)
+
+func _setup_buttons_focus() -> void:
+	if continue_button != null:
+		var buttons: Array[Button] = [continue_button, retry_button, menu_button]
+		for btn in buttons:
+			btn.focus_mode = Control.FOCUS_ALL
+	else:
+		var buttons: Array[Button] = [retry_button, menu_button]
+		for btn in buttons:
+			btn.focus_mode = Control.FOCUS_ALL
+
+func _on_visibility_changed() -> void:
+	if is_visible_in_tree():
+		if continue_button != null:
+			continue_button.grab_focus.call_deferred()
+		else:
+			retry_button.grab_focus.call_deferred()
 
 
 func _get_next_level_path() -> String:
@@ -40,8 +62,8 @@ func _get_next_level_path() -> String:
 
 	# Transicao especifica da Fase 4 para a Fase 5
 	if current_scene != null:
-		if current_scene.scene_file_path == "res://scenes/level_4.tscn":
-			return "res://scenes/level_5.tscn"
+		if current_scene.scene_file_path == "res://scenes/levels/level_4.tscn":
+			return "res://scenes/levels/level_5.tscn"
 
 	# Outras fases usam o caminho configurado
 	return next_level_path.strip_edges()

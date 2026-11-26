@@ -80,6 +80,8 @@ func _physics_process(delta: float) -> void:
 	if state != State.HURT:
 		if _check_stomp():
 			return
+	
+	
 
 	match state:
 
@@ -118,12 +120,15 @@ func _physics_process(delta: float) -> void:
 					state = State.CHASE
 				else:
 					state = State.IDLE
+					# Se o player ja estiver encostando ao fim da recuperacao, aplica dano
+					_check_contact_damage()
 
 		State.HURT:
 			timer -= delta
 
 			if timer <= 0.0:
 				_start_recovery()
+	_check_contact_damage()
 
 
 # NOVA DETECCAO CONTINUA
@@ -235,6 +240,32 @@ func _check_stomp() -> bool:
 		if falling and above and centered:
 			_receive_damage(hero)
 			return true
+
+	return false
+
+func _check_contact_damage() -> bool:
+	if state == State.HURT or state == State.RECOVER or state == State.DEAD:
+		return false
+
+	for body in get_overlapping_bodies():
+		var hero: CharacterBody2D = body as CharacterBody2D
+
+		if hero == null or not is_instance_valid(hero):
+			continue
+
+		if not hero.has_method("respawn"):
+			continue
+
+		# Ignora se o player estiver por cima para nao atropelar o stomp
+		var above: bool = (
+			hero.global_position.y <
+			global_position.y - stomp_height
+		)
+		if above:
+			continue
+
+		hero.call_deferred("respawn")
+		return true
 
 	return false
 

@@ -19,7 +19,7 @@ func _ready() -> void:
 
 	# Conecta os sinais automaticamente
 	detector.body_entered.connect(_on_detector_body_entered)
-	detector.body_exited.connect(_on_detector_body_exited)
+	# detector.body_exited.connect(_on_detector_body_exited)
 
 	break_timer.timeout.connect(_on_break_timer_timeout)
 	respawn_timer.timeout.connect(_on_respawn_timer_timeout)
@@ -36,7 +36,7 @@ func _on_detector_body_entered(body: Node2D) -> void:
 		player_on_platform = true
 		break_timer.start()
 
-
+"""
 # Quando a raposa sai da plataforma
 func _on_detector_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D and body.has_method("respawn"):
@@ -44,11 +44,11 @@ func _on_detector_body_exited(body: Node2D) -> void:
 
 		if not breaking and not broken:
 			break_timer.stop()
-
+"""
 
 # Quando termina o tempo sobre a plataforma
 func _on_break_timer_timeout() -> void:
-	if not player_on_platform or breaking or broken:
+	if breaking or broken:
 		return
 
 	breaking = true
@@ -84,7 +84,7 @@ func _on_respawn_timer_timeout() -> void:
 
 	# Mostra a plataforma inteira
 	sprite.show()
-	sprite.play("idle")
+	sprite.play("respawn")
 
 	# Restaura a colisão e o detector
 	solid_collision.set_deferred("disabled", false)

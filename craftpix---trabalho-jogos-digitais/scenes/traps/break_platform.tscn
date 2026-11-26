@@ -35,6 +35,34 @@ region = Rect2(288, 0, 48, 48)
 atlas = ExtResource("1_tfn7q")
 region = Rect2(0, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_om4gu"]
+atlas = ExtResource("1_tfn7q")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt35j"]
+atlas = ExtResource("1_tfn7q")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwhee"]
+atlas = ExtResource("1_tfn7q")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2xwn"]
+atlas = ExtResource("1_tfn7q")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gjdy"]
+atlas = ExtResource("1_tfn7q")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rncw"]
+atlas = ExtResource("1_tfn7q")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe6ku"]
+atlas = ExtResource("1_tfn7q")
+region = Rect2(0, 0, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8hp52"]
 animations = [{
 "frames": [{
@@ -70,6 +98,32 @@ animations = [{
 "loop": 0,
 "name": &"idle",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om4gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt35j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwhee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2xwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gjdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rncw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe6ku")
+}],
+"loop": 0,
+"name": &"respawn",
+"speed": 14.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om4gu"]
@@ -84,8 +138,7 @@ script = ExtResource("1_yk7v0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=457593406]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8hp52")
-animation = &"idle"
-frame_progress = 1.0
+animation = &"respawn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1400778926]
 shape = SubResource("RectangleShape2D_om4gu")
@@ -98,9 +151,9 @@ collision_layer = 0
 shape = SubResource("RectangleShape2D_kt35j")
 
 [node name="BreakTimer" type="Timer" parent="." unique_id=376939039]
-wait_time = 0.4
+wait_time = 0.8
 one_shot = true
 
 [node name="RespawnTimer" type="Timer" parent="." unique_id=694711543]
-wait_time = 2.5
+wait_time = 2.0
 one_shot = true
